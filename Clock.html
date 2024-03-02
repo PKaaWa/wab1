@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Clok.css"/>
+    <link rel="stylesheet" href="Clok.js"/>
+    <title>Digital Clock</title>
+<div id="digital-clock"></div>
+<div class="card">
+<script>
+    function updateDigitalClock() {
+        var now = new Date();
+        var hours = now.getHours();
+        var minutes = now.getMinutes();
+        var seconds = now.getSeconds();
+
+        hours = hours < 10 ? '0' + hours : hours;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
+
+        var timeString = hours + ':' + minutes + ':' + seconds;
+        document.getElementById('digital-clock').innerText = timeString;
+    }
+
+    // Update the clock every second
+    setInterval(updateDigitalClock, 1000);
+
+    // Initial call to display the clock immediately
+    updateDigitalClock();
+    
+</script>
+<a href="pro1.html">Back</a>
+</div>
+</body>
+</html>
